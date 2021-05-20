@@ -27,6 +27,11 @@ object Build : BuildType({
             name = "Build Code"
             goals = "clean install"
         }
+        maven {
+            name = "Test Cases"
+            goals = "clean test"
+            mavenVersion = defaultProvidedVersion()
+        }
     }
 
     triggers {
