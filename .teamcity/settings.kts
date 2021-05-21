@@ -11,7 +11,6 @@ project {
     vcsRoot(HttpsGithubComDaticahealthJavaTomcatMavenExample)
 
     buildType(Build)
-    buildType(Package)
 }
 
 object Build : BuildType({
@@ -45,26 +44,4 @@ object HttpsGithubComDaticahealthJavaTomcatMavenExample : GitVcsRoot({
     name = "https://github.com/daticahealth/java-tomcat-maven-example"
     url = "https://github.com/daticahealth/java-tomcat-maven-example"
     branch = "refs/heads/master"
-})
-
-object Build : BuildType({
-    name = "Package"
-    description = "SCM Check Out"
-
-    vcs {
-        root(DslContext.settingsRoot)
-        root(HttpsGithubComDaticahealthJavaTomcatMavenExample)
-    }
-
-    steps {
-        maven {
-            goals = "clean package"
-            mavenVersion = defaultProvidedVersion()
-        }
-    }
-
-    triggers {
-        vcs {
-        }
-    }
 })
