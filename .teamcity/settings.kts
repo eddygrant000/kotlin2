@@ -11,6 +11,7 @@ project {
     vcsRoot(HttpsGithubComDaticahealthJavaTomcatMavenExample)
 
     buildType(Build)
+    buildType(Package)
 }
 
 object Build : BuildType({
@@ -30,6 +31,28 @@ object Build : BuildType({
         maven {
             name = "Test Cases"
             goals = "clean test"
+            mavenVersion = defaultProvidedVersion()
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object Build : BuildType({
+    name = "Package"
+    description = "SCM Check Out"
+
+    vcs {
+        root(DslContext.settingsRoot)
+        root(HttpsGithubComDaticahealthJavaTomcatMavenExample)
+    }
+
+    steps {
+        maven {
+            goals = "clean package"
             mavenVersion = defaultProvidedVersion()
         }
     }
