@@ -41,6 +41,12 @@ object Build : BuildType({
     }
 })
 
+object HttpsGithubComDaticahealthJavaTomcatMavenExample : GitVcsRoot({
+    name = "https://github.com/daticahealth/java-tomcat-maven-example"
+    url = "https://github.com/daticahealth/java-tomcat-maven-example"
+    branch = "refs/heads/master"
+})
+
 object Build : BuildType({
     name = "Package"
     description = "SCM Check Out"
@@ -61,10 +67,4 @@ object Build : BuildType({
         vcs {
         }
     }
-})
-
-object HttpsGithubComDaticahealthJavaTomcatMavenExample : GitVcsRoot({
-    name = "https://github.com/daticahealth/java-tomcat-maven-example"
-    url = "https://github.com/daticahealth/java-tomcat-maven-example"
-    branch = "refs/heads/master"
 })
