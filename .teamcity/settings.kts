@@ -33,7 +33,6 @@ object Build : BuildType({
             mavenVersion = defaultProvidedVersion()
         }
     }
-
     triggers {
         vcs {
         }
@@ -45,3 +44,4 @@ object HttpsGithubComDaticahealthJavaTomcatMavenExample : GitVcsRoot({
     url = "https://github.com/daticahealth/java-tomcat-maven-example"
     branch = "refs/heads/master"
 })
+# sachintest
